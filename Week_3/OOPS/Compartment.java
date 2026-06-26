@@ -1,0 +1,76 @@
+//Abstract Compartment class
+abstract class Compartment
+{
+    public abstract String notice();
+}
+//General Coach
+public class General extends Compartment
+{
+    public String notice()
+    {
+        return "This is a General Compartment";
+    }
+}
+//First Class Coach
+public class General extends Compartment
+{
+    public String notice()
+    {
+        return "This is a First Class Compartment";
+    }
+}
+//Ladies Coach
+public class General extends Compartment
+{
+    public String notice()
+    {
+        return "This is a Ladies Compartment";
+    }
+}
+//This is Luggage Compartment
+public class General extends Compartment
+{
+    public String notice()
+    {
+        return "This is a Luggage Compartment";
+    }
+}
+// Test Compartment Class for random generation
+import java.util.Random;
+public class TestCompartment
+{
+    public static void main(String[] args)
+    {
+        Compartment[] c = new Compartment[10];
+        Random r = new Random();
+        for(int i = 0; i < c.length; i++)
+        {
+            int n = r.nextInt(4) + 1;
+            switch(n)
+            {
+                case 1:
+                    c[i] = new FirstClass();
+                    break;
+
+                case 2:
+                    c[i] = new Ladies();
+                    break;
+
+                case 3:
+                    c[i] = new General();
+                    break;
+
+                case 4:
+                    c[i] = new Luggage();
+                    break;
+            }
+        }
+
+        for(int i = 0; i < c.length; i++)
+        {
+            System.out.println("Compartment " + (i + 1) + ":");
+            System.out.println(c[i].notice());
+            System.out.println();
+        }
+    }
+}
